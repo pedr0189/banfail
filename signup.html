@@ -3,23 +3,25 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login form</title>
+    <title>Sign up form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/signup.js"></script>
 </head>
 <body>
     <div class="formwrapper" id="formwrapper">
-        <form id="frmlogin">
+        <form id="frmsignup">
             <label for="email">E-mail address</label>
-            <input type="email" name="email" id="txtemail" value="admin@admin.com">
+            <input type="email" name="email" id="txtemail">
             <label for="password">Password</label>
-            <input type="password" name="password" id="txtpassword" required value="123456">
+            <input type="password" name="password" id="txtpassword">
+            <label for="verifypassword">Verify Password</label>
+            <input type="password" name="verifypassword" id="txtverifypassword">
             <button type="reset">Reset</button>
-            <button type="submit" id="btnsubmit">Submit</button>
+            <button type="button" id="btnsubmit">Submit</button>
         </form>
-        <a href="./signup.html">Sign up</a>
+        <p>Already a user?<a href="./login.html"> Log in</a></p>
     </div>
 </body>
-<script src="js/login.js"></script>
 </html>

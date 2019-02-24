@@ -36,7 +36,7 @@ function redcard($target) //used for imediate lock out (attack detected)
     global $column;
     if(checkifexists($table,$column,$target))
     {
-        $querystring = "UPDATE $table SET status = \"3\" WHERE $column = $target";
+        $querystring = "UPDATE $table SET status = \"3\" timestamp = DATETIME(\"now\"), WHERE $column = $target";
         $query = $connection->prepare($querystring);
         // $query->bindValue(':table', $table);
         // $query->bindValue(':column', $column);
@@ -61,7 +61,7 @@ function yellowcard($status, $target) //three yellow cards equals red card
     global $connection;
     global $table;
     global $column;
-    $querystring = "UPDATE $table SET status =".($status+1)." WHERE $column = \"$target\"";
+    $querystring = "UPDATE $table SET status =".($status+1).", timestamp = DATETIME('now') WHERE $column = \"$target\"";
     //echo $querystring;
     $query = $connection->prepare($querystring);
     //var_dump($query);

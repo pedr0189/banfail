@@ -27,6 +27,7 @@ if( isset($_POST["email"]) //check if post is sent correctly containing form dat
             $query->execute();
             $results = $query->fetchAll();
             if (count($results)) {
+                // if user logs in successfully, clear previous cards.
                 $querystring = "UPDATE user_login_attempts SET status = 0 WHERE email = \"$email\"";
                 //echo $querystring;
                 $query = $connection->prepare($querystring);

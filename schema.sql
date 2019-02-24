@@ -1,13 +1,12 @@
-CREATE TABLE `` (
-	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+CREATE TABLE `users` (
 	`email`	TEXT NOT NULL UNIQUE,
-	`password`	TEXT NOT NULL
+	`password`	TEXT,
+	PRIMARY KEY(`email`)
 );
-
-CREATE TABLE `login_attempts` (
-	`id`	INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-	`user_email`	TEXT NOT NULL,
-	`timestamp`	NUMERIC NOT NULL
+CREATE TABLE `user_login_attempts` ( 
+	`id` INTEGER PRIMARY KEY AUTOINCREMENT, 
+	`user_email_fk` TEXT, `timestamp` TEXT NOT NULL, 
+	FOREIGN KEY(`user_email_fk`) REFERENCES `users`(`email`) 
 );
 
 

@@ -18,7 +18,7 @@ $("#frmlogin").submit(function( event ){
             var response = JSON.parse(jsonresponse);
             console.log(response)
             if (response.status == "1") {
-                location.href = "home.php";
+                alert(response.message);
             }else{
                 alert(response.message);
             }

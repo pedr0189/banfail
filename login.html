@@ -14,7 +14,7 @@
             <label for="email">E-mail address</label>
             <input type="email" name="email" id="txtemail" value="admin@admin.com">
             <label for="password">Password</label>
-            <input type="password" name="password" id="txtpassword" required value="123456">
+            <input type="password" name="password" id="txtpassword" pattern=".{8,}" required title="Minimum of eight characters" value="12345678">
             <button type="reset">Reset</button>
             <button type="submit" id="btnsubmit">Submit</button>
         </form>
